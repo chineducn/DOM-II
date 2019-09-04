@@ -63,55 +63,22 @@ inputBox.addEventListener('paste', (event) => {
     event.preventDefault();
 })
 
-homeLink.addEventListener('focus', (event) => {
-    changeNavColor('blue');
-    event.target.style.color = 'red';
-    event.preventDefault();
+navLinks.forEach(anchor => {
+    anchor.addEventListener('focus', () => {
+        changeNavColor('blue');
+        anchor.style.color = 'yellow';
+        event.preventDefault();
+    })
 })
 
-aboutLink.addEventListener('focus', () => {
-    changeNavColor('blue');
-    aboutLink.style.color = 'red';
+navLinks.forEach(anchor => {
+    anchor.addEventListener('blur', () => {
+        changeNavColor('green');
+    })
 })
 
-blogLink.addEventListener('focus', () => {
-    changeNavColor('blue');
-    blogLink.style.color = 'red';
-})
-
-contactLink.addEventListener('focus', () => {
-    changeNavColor('blue');
-    contactLink.style.color = 'red';
-})
-
-homeLink.addEventListener('blur', () => {    
-    changeNavColor('black');
-})
-
-aboutLink.addEventListener('blur', () => {    
-    changeNavColor('black');
-})
-
-blogLink.addEventListener('blur', () => {    
-    changeNavColor('black');
-})
-
-contactLink.addEventListener('blur', () => {    
-    changeNavColor('black');
-})
-
-homeLink.addEventListener('click', (event) => {
-    event.preventDefault();
-})
-
-/aboutLink.addEventListener('click', (event) => {
-    event.preventDefault();
-})
-
-aboutLink.addEventListener('click', (event) => {
-    event.preventDefault();
-})
-
-aboutLink.addEventListener('click', (event) => {
-    event.preventDefault();
+navLinks.forEach(anchor => {
+    anchor.addEventListener('click', (event) => {
+        event.preventDefault();
+    })
 })
